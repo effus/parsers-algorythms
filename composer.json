@@ -1,6 +1,6 @@
 {
   "name": "effus/parsers-algorythms",
-  "type": "package",
+  "type": "project",
   "license": "GNU",
   "authors": [{
     "name": "effus",
@@ -14,5 +14,7 @@
     "effus/php-tools": "dev-master"
   },
   "minimum-stability": "dev",
-  "require": {}
+  "config": {
+    "optimize-autoloader": true
+  }
 }
