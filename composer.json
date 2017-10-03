@@ -1,13 +1,19 @@
 {
-    "name": "effus/parsers-algorythms",
-    "type": "package",
-    "license": "GNU",
-    "authors": [
-        {
-            "name": "effus",
-            "email": "effusps@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {}
+  "name": "effus/parsers-algorythms",
+  "type": "package",
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "effus",
+      "email": "effusps@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/effus/php-tools.git"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
 }
