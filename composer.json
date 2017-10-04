@@ -2,14 +2,18 @@
   "name": "effus/parsers-algorythms",
   "type": "project",
   "license": "GNU",
-  "authors": [{
-    "name": "effus",
-    "email": "effusps@gmail.com"
-  }],
-  "repositories": [{
-    "type": "vcs",
-    "url": "https://github.com/effus/php-tools.git"
-  }],
+  "authors": [
+    {
+      "name": "effus",
+      "email": "effusps@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/effus/php-tools.git"
+    }
+  ],
   "require": {
     "effus/php-tools": "dev-master"
   },
