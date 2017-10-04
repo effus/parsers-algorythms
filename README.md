@@ -12,3 +12,10 @@ Get video links from Youtube page, then get a number of views for each founded v
 ```
 php parser.php https://www.youtube.com YoutubeLinks QuickSort
 ```
+
+### Youtube Links + BubbleSort
+Just the same but with Bubble Sort :)
+
+```
+php parser.php https://www.youtube.com YoutubeLinks BubbleSort
+```
