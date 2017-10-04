@@ -1,8 +1,9 @@
 <?php
 namespace effus\parsers;
 
-use effus\runner\ParserRunnerResults;
+use effus\runner\ParserResults;
 
-interface InterfaceParser {
-  public function process(string $data):ParserRunnerResults;
+interface InterfaceParser
+{
+  public function process(string $resource) : ParserResults;
 }
