@@ -30,6 +30,7 @@ class QuickSort implements InterfaceParser {
             return [];
         }
         $rand = rand(0,count($arr)-1);
+        
     }
 
     private function qsr($items,) {
