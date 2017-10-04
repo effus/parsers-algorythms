@@ -19,3 +19,5 @@ Just the same but with Bubble Sort :)
 ```
 php parser.php https://www.youtube.com YoutubeLinks BubbleSort
 ```
+
+![compatible](https://img.shields.io/badge/Requirements-PHP%207-blue.svg)
