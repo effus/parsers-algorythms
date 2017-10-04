@@ -15,6 +15,11 @@ class RunnerResults
         'memoryDiff' => 0
     ];
 
+    /**
+     * Output data from containers
+     *
+     * @return void
+     */
     public function show()
     {
         \effus\outputStr("=== RUNNER RESULTS ===");

@@ -19,6 +19,8 @@ class YoutubeLinks implements InterfaceParser
     {
         $out = new ParserResults();
         $ms = microtime(true);
+
+        // Requesting main page
         $response = \HttpClient::request($resource);
         if ($response[1]['http_code'] != 200) {
             throw new \Exception('Bad HTTP response code: ' . $response[1]['http_code']);
@@ -26,12 +28,17 @@ class YoutubeLinks implements InterfaceParser
         $data = $response[0];
         $out->addStat('requests', (microtime(true) - $ms));
         $ms = microtime(true);
+
+        // Get unique video links from main page
         $videoLinks = $this->getUniqueLinks($data);
         $out->addStat('parsing', (microtime(true) - $ms));
         \effus\outputStr('Retrieve view counts...');
+
+        // Data and index containers
         $videoViews = [];
         $viewsIndex = [];
 
+        // Requesting every video link for view count
         foreach ($videoLinks as $_vl) {
             $ms = microtime(true);
             try {
@@ -61,6 +68,13 @@ class YoutubeLinks implements InterfaceParser
         return $out;
     }
 
+    /**
+     * Parse for unique videos
+     *
+     * @param [type] $data
+     * @param integer $maxCount
+     * @return array
+     */
     private function getUniqueLinks($data, $maxCount = 50) : array
     {
         $a1 = preg_match_all('/\/watch\?v\=([A-z0-9\_\-]{11})/ui', $data, $matches1);
@@ -80,6 +94,12 @@ class YoutubeLinks implements InterfaceParser
         return $links;
     }
 
+    /**
+     * Parse for view count
+     *
+     * @param [type] $videoUrl
+     * @return int
+     */
     private function getViewsCount($videoUrl) : int
     {
         \effus\outputStr('GET ' . $videoUrl, false);
@@ -97,21 +117,4 @@ class YoutubeLinks implements InterfaceParser
         return (int)$matches[1];
     }
 
-
-/*
-    private function compareStrings($str1, $str2)
-    {
-        $_n1 = $this->str2Num($str1);
-        $_n2 = $this->str2Num($str2);
-        return $_n1 > $_n2 ? -1 : ($_n1 < $_n2 ? 1 : 0);
-    }
-
-    private function str2Num($str)
-    {
-        $out = 0;
-        for ($i = 0; $i < strlen($str); $i++) {
-            $out .= ord($str[$i]);
-        }
-        return substr($out, 0, 11);
-    }*/
 }

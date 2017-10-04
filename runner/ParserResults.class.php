@@ -6,8 +6,8 @@ namespace effus\runner;
  */
 class ParserResults
 {
-    private $data = [];
-    private $index = [];
+    private $data = []; // container for any structures with key similar to indexed value
+    private $index = []; // container for indexed data
 
     private $stat = [
         'requests' => 0,
