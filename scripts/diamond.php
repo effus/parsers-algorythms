@@ -25,8 +25,7 @@
  
  // My Version 2
  $x = [1,3,5,7,9,7,5,3,1];
- $y = array_map(function($n){
+ echo implode(PHP_EOL,array_map(function($n){
      $half = round((9-$n)/2);
      return ($half?str_repeat(' ',$half):'') . (str_repeat('*',$n)) . ($half?str_repeat(' ',$half):'');
- },$x);
- echo implode(PHP_EOL,$y).PHP_EOL;
+ },$x);).PHP_EOL;
